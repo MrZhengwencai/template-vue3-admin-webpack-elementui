@@ -1,0 +1,72 @@
+{
+  "name": "umsstatic",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve:dev": "vue-cli-service serve --mode dev",
+    "serve:test": "vue-cli-service serve --mode test",
+    "build:test": "vue-cli-service build --mode test",
+    "prettier": "prettier \"{src}/**/*.{vue,js}\" --write",
+    "lint:js": "eslint \"{src}/**/*.{vue,js}\" ",
+    "lint:js-fix": "eslint \"{src}/**/*.{vue,js}\" --fix",
+    "lint:css": "stylelint \"**/*.{vue,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:css-fix": "stylelint \"**/*.{vue,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/ --fix",
+    "husky": "husky install",
+    "postinstall": ""
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "npm run prettier",
+      "npm run lint:js-fix",
+      "npm run lint:css-fix",
+      "git add ."
+    ]
+  },
+  "dependencies": {
+    "@vue/babel-plugin-jsx": "1.0.6",
+    "axios": "0.27.2",
+    "core-js": "3.6.5",
+    "element-plus": "2.1.11",
+    "js-cookie": "2.2.1",
+    "nprogress": "0.2.0",
+    "vue": "3.2.2",
+    "vue-router": "4.0.4",
+    "vuex": "4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@commitlint/cli": "12.0.1",
+    "@commitlint/config-conventional": "12.0.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "3.2.2",
+    "@vue/eslint-config-prettier": "7.0.0",
+    "autoprefixer": "9.8.6",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "compression-webpack-plugin": "5.0.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "6.8.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-vue": "7.7.0",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "node-sass": "4.14.1",
+    "postcss": "8.4.4",
+    "prettier": "2.2.1",
+    "sass-loader": "8.0.2",
+    "stylelint": "13.11.0",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-order": "4.1.0",
+    "webpack-bundle-analyzer": "4.5.0"
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
